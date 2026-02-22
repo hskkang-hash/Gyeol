@@ -32,6 +32,6 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: bfc34ab39887e3a848ef4f60d73a281e
-          projectName: gyeol-511
+          projectName: gyeol
           directory: dist
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
