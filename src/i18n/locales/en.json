@@ -1,0 +1,42 @@
+{
+    "vibe": {
+        "title": "Your Vibe"
+    },
+    "dailyOracle": {
+        "title": "Daily Oracle"
+    },
+    "onboarding": {
+        "step1_title": "When were you born?",
+        "step1_subtitle": "Your birth moment unlocks your personal cosmic code.",
+        "step2_title": "How do you identify?",
+        "step2_subtitle": "This helps us personalize your life insights.",
+        "step3_title": "What are you focused on right now?",
+        "step3_subtitle": "Select your top priority.",
+        "button_reveal": "Reveal My Insight"
+    },
+    "nav": {
+        "vibe": "Vibe",
+        "goldenDays": "Golden Days",
+        "profile": "Profile"
+    },
+    "Welcome to Gyeol": "Welcome to Gyeol",
+    "Discover your daily flow and connect with the world.": "Discover your daily flow and connect with the world.",
+    "home.tagline": "Today's cosmic forecast, tailored to your unique energy.",
+    "home.todaysGyeol": "Today's Gyeol",
+    "home.myCosmos": "My Cosmos",
+    "home.relationshipGyeol": "Relationship Gyeol",
+    "today.element": "Today's Element",
+    "today.color": "Auspicious Color",
+    "today.number": "Lucky Number",
+    "today.direction": "Favorable Direction",
+    "elements.wood": "Wood",
+    "colors.blue": "Blue",
+    "directions.east": "East",
+    "footer.company": "Company",
+    "footer.about": "About Us",
+    "footer.contact": "Contact Us",
+    "footer.legal": "Legal",
+    "footer.privacy": "Privacy Policy",
+    "footer.terms": "Terms of Service",
+    "footer.copyright": " Gyeol. All rights reserved."
+}

@@ -1,0 +1,145 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
+
+/* Base Container */
+.onboarding-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Align content to the top */
+    min-height: 100vh;
+    background-color: #121212;
+    color: #E0E0E0;
+    font-family: 'Noto Sans KR', sans-serif;
+    text-align: center;
+    padding: 4rem 20px 20px 20px; /* Add more top padding */
+}
+
+/* Header */
+.onboarding-header {
+    margin-bottom: 4rem;
+}
+
+.onboarding-header h1 {
+    font-family: 'Prata', serif;
+    font-size: 3.5rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.1em;
+}
+
+.onboarding-header p {
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: #A0A0A0;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+
+/* Form & Step Container */
+.onboarding-form {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.step-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.step-container h2 {
+    font-family: 'Prata', serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: #FFFFFF;
+    margin-bottom: 0.5rem;
+}
+
+.step-container p {
+    color: #A0A0A0;
+    font-size: 0.9rem;
+    margin-bottom: 3rem;
+    max-width: 300px;
+}
+
+/* Input Fields & Select */
+.input-field,
+.select-field {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #444;
+    color: #E0E0E0;
+    font-size: 1.2rem;
+    font-family: 'Noto Sans KR', sans-serif;
+    width: 100%;
+    padding: 0.8rem 0.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.input-field:focus,
+.select-field:focus {
+    outline: none;
+    border-bottom: 1px solid #E0E0E0;
+}
+
+/* Custom styling for date input placeholder */
+input[type="date"] {
+  position: relative;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: auto;
+  height: auto;
+  color: transparent;
+  background: transparent;
+}
+
+.select-field {
+    background: url('data:image/svg+xml;utf8,<svg fill="white" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>') no-repeat right 10px center;
+    background-size: 20px;
+    padding-right: 40px; /* Make space for the arrow */
+}
+
+select option {
+    background-color: #121212;
+    color: #E0E0E0;
+}
+
+
+/* Buttons */
+.next-btn,
+.discover-btn {
+    background-color: #F0F0F0;
+    color: #121212;
+    border: none;
+    padding: 1rem 0;
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: 'Noto Sans KR', sans-serif;
+    cursor: pointer;
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: background-color 0.3s;
+    margin-top: 1rem;
+}
+
+.next-btn:hover,
+.discover-btn:hover {
+    background-color: #C0C0C0;
+}
+

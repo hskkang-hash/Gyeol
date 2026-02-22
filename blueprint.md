@@ -1,75 +1,65 @@
-# Gyeol: Global Energy Analysis Platform - Blueprint
+# Gyeol: Life-Sync Service - Blueprint v3.0
 
-## 1. Vision & Strategy
+## 1. 🚀 Core Vision & Global Branding
 
-**Core Vision:** To become the global leader in the "Energy Analysis" market, surpassing traditional fortune-telling apps like '점신' by offering a superior, data-driven, and visually stunning user experience.
-
-**Strategic Pillars:**
-1.  **AdSense Pre-pass (Content & Authority):** Build a content-rich, authoritative platform that Google trusts, ensuring rapid AdSense approval.
-2.  **Unbeatable UX (Personalization & Visualization):** Shift from text-heavy reports to intuitive, beautiful data visualizations.
-3.  **Global Monetization (Hybrid Model):** Rebrand for a global audience ("Saju" -> "Energy Analysis") and implement a hybrid Ad-Gated and Subscription model.
+*   **Core Vision:** To be the leading **Life-Sync** service by providing AI-personalized, strategic future predictions.
+*   **Brand Identity:** GYEOL (결) - "Sync with your destiny."
+*   **Market Positioning:** Not as 'Fortune-telling', but as **'Cosmic Wellness'** & **'Life-Sync'** to build a premium, global brand.
+*   **Key Branding Words:** Flow (흐름), Sync (일치), Harmony (조화).
 
 ---
 
-## 2. Phase 1: Onboarding & SEO (High Priority)
+## 2. 🎨 Content Strategy: The Soul of GYEOL
 
-### 2.1. [UI-01] Immersive & Step-by-Step Onboarding
-*   **Objective:** Create a beautiful, interactive, and user-friendly entry point that builds trust and excitement.
-*   **Component:** `src/pages/Login.jsx` (will be refactored into a multi-step component).
-*   **Design Concept:** "Cosmic Theme" - Deep Blue & Gold palette.
-*   **Key Features:**
-    *   **[ ] Step-by-Step Form:**
-        1.  Step 1: Gender & Name.
-        2.  Step 2: Birth Date (YYYY/MM/DD).
-        3.  Step 3: Birth Time (HH:MM).
-        4.  A progress bar will be displayed at the top.
-    *   **[ ] Interactive Background:** Implement a real-time animated constellation/starry background.
-    *   **[ ] Live Input Feedback:** As the user types their birth date, instantly display the corresponding day of the week and their Western zodiac sign (e.g., "You were born on a Tuesday, a vibrant Leo").
-    *   **[ ] Dynamic Explanations ([FE-01]):** When a user focuses on an input field (e.g., Year), a section below will display text explaining the astrological significance of that data point.
+### 2.1. Hyper-Personalized Messaging (`Daily Oracle`)
 
-### 2.2. [FE-02] SEO & Content Authority
-*   **Objective:** Establish E-E-A-T (Experience, Expertise, Authoritativeness, Trustworthiness) to satisfy search engines and prepare for AdSense.
-*   **Components:** `Footer.jsx`, and new policy pages.
-*   **Key Features:**
-    *   **[ ] Glossary Footer:** Add a permanent footer section defining key terms like "Saju (사주)", "Manse-ryeok (만세력)", "Ascendant", etc., rebranding them for a global audience (e.g., "Life Energy Map").
-    *   **[ ] Essential Pages:** Create and link the following pages:
-        - `src/pages/PrivacyPolicy.jsx`
-        - `src/pages/TermsOfService.jsx`
-        - `src/pages/ContactUs.jsx`
-    *   **[ ] Dynamic Meta Tags:** Implement `react-helmet-async` to dynamically change the page title (e.g., `<title>What's My Cosmic Forecast Today?</title>`) based on user context.
+*   **Objective:** Deliver the daily vibe (`vibe_score`) from the Saju engine (Stitch) with a tone and manner tailored to the user's life stage and gender, stored in Firebase (`user_profile`).
 
----
+*   **Age/Gender Segments & Tone:**
+    *   **A. 20s (The Explorer):** Trendy, supportive, action-oriented, intuitive.
+        *   *Female:* "오늘 당신의 '결'은 핑크빛이에요! 새로운 카페나 낯선 공간에서 뜻밖의 인연이 기다리고 있을지도 몰라요. #도전 #설렘"
+        *   *Male:* "결이 말해주네요. 오늘은 고민보다 GO! 프로젝트나 운동 등 에너지를 발산할수록 더 큰 운이 따라올 거예요."
+    *   **B. 30-40s (The Achiever):** Professional, efficient, harmonious, practical advice.
+        *   *Female:* "내면의 결을 다듬을 시간입니다. 오늘은 중요한 미팅보다 자신을 돌보는 시간이 향후 더 큰 비즈니스 운을 가져다줄 거예요."
+        *   *Male:* "재물운의 결이 매끄럽습니다. 미뤄뒀던 투자 결정이나 커리어 관련 대화에서 주도권을 잡기에 최적인 날입니다."
+    *   **C. 50+ (The Sage):** Dignified, stable, health-focused, wise insight.
+        *   *Female:* "평온한 결의 흐름이 느껴집니다. 주변 사람들과 따뜻한 기운을 나누며 건강을 챙기기에 더없이 좋은 날입니다."
+        *   *Male:* "성급함보다는 여유로운 결을 유지하세요. 순리대로 흘러가게 두는 것이 결국 당신의 명예를 지켜줄 것입니다."
 
-## 3. Phase 2: Result Visualization (Medium Priority)
+### 2.2. Global Feature Naming & Copy
 
-### 3.1. [UI-02] The Fortune Dashboard
-*   **Objective:** Transform the results page from static text into an engaging, personalized dashboard.
-*   **Component:** `src/pages/Home.jsx`
-*   **Key Features:**
-    *   **[ ] Data-Viz Library:** Integrate `Recharts` for creating charts.
-    *   **[ ] Energy Gauge:** Display "Today's Cosmic Energy Index" as a 0-100% gauge chart.
-    *   **[ ] Luck Radar Chart:** Visualize Love, Wealth, Health, and Career luck on a pentagonal radar chart.
-    *   **[ ] Lucky Elements Cards:** Present today's lucky color, number, and direction as visually appealing icon-based cards.
-    *   **[ ] Loading Animation:** Use `Lottie` to show a beautiful "celestial observation" animation while data is being calculated to prevent user drop-off.
+| Feature             | Global Name         | KR Copywriting                  | Core Concept                       |
+| ------------------- | ------------------- | ------------------------------- | ---------------------------------- |
+| Main Dashboard      | **Your Vibe**       | "내 삶의 결을 읽다"           | Intuitive vibe index               |
+| Personalized Msg    | **Daily Oracle**    | "오늘 당신에게 흐르는 기운"     | Mystical, personalized insight     |
+| Auspicious Days     | **Golden Days**     | "놓치지 말아야 할 기회의 순간"  | Timing for success & luck        |
+| Friend Compatibility| **Vibe-Match**      | "우리 사이, 결이 맞을까?"      | Casual, viral, like MBTI           |
+| Premium Report      | **Deep Flow Report**| "당신만의 심층 운명 가이드"     | Professional, high-value           |
+| Expert Session      | **1:1 Curator**     | "마음의 결을 상담하세요"        | Premium, curated guidance          |
 
 ---
 
-## 4. Phase 3: Global Monetization & Localization (Medium Priority)
+## 3. 💻 Technical & Business Directives
 
-### 4.1. [BIZ-01, BIZ-02] Hybrid Business Model
-*   **Objective:** Implement diverse revenue streams for a global audience.
-*   **Key Features:**
-    *   **[ ] Ad-Gated Content:** Gate detailed analysis (e.g., "Key dates to watch out for this month") behind a "Watch Ad to Unlock" button (rewarded ad model).
-    *   **[ ] AI Fortune Counselor:**
-        - Integrate the OpenAI API.
-        - Create a chat interface where users can ask questions about their "Energy Analysis" (e.g., "How should I approach my meeting today?").
-        - This will be a subscription-based feature.
+### 3.1. For the Business Lead
 
-### 4.2. [i18n] Advanced Localization
-*   **Objective:** Make the app feel native to users anywhere in the world.
-*   **Key Features:**
-    *   **[ ] Terminology Translation:** Update `i18n.js` to translate core concepts:
-        - '사주' -> 'Life Energy Map'
-        - '운세' -> 'Cosmic Forecast'
-    *   **[ ] Auto Language Detection:** Implement logic to detect the user's browser/system language (`navigator.language`) and set the initial language automatically.
+*   **Marketing Strategy:** Position GYEOL as 'Cosmic Wellness' or 'Life-Sync', avoiding 'Fortune-telling' to lower barriers in Western markets and build a premium brand.
+*   **Retention Campaign:** Launch a 'Your Monthly Flow' newsletter at the beginning of each month, personalized based on the user's birth information, to increase user retention.
+
+### 3.2. For the Development Lead
+
+*   **Internationalization (i18n):** Implement `react-i18next` in the React frontend to enable seamless Korean/English language switching.
+*   **Data Logic for Messaging:**
+    1.  Fetch `age_group` and `gender` from the `user_profile` in Firestore.
+    2.  Combine this with the `vibe_score` calculated from Stitch Functions.
+    3.  Design a system to match this combined data to the appropriate message template.
+*   **Payment Gateway Scalability:** Structure the API to support not only Google Pay but also Apple Pay and Stripe for global market expansion.
+
+---
+
+## 4. ✨ The GYEOL Experience Principle
+
+> "Simple text delivery is no different from 'Jeomshin'. Where we will win is in the **'vibe of the message'**. While maintaining a tone and manner like a close friend giving sincere advice, we must add smooth animations (**Framer Motion**) to the UI, making the user feel comforted the moment they open the app."
+
+*   **Action Item:** Implement `Framer Motion` for subtle, elegant animations on key UI elements like the Dashboard card to enhance the user experience.
 

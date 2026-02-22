@@ -1,95 +1,46 @@
 
-import React, { useContext } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { ThemeProvider as MuiThemeProvider, createTheme } from '@mui/material/styles';
-import CssBaseline from '@mui/material/CssBaseline';
-import { Box } from '@mui/material';
-import { ThemeContext } from './contexts/themeContext.js';
-import ThemeProvider from './contexts/ThemeProvider.jsx';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import Onboarding from './pages/Onboarding';
+import Dashboard from './pages/Dashboard';
+import GoldenDays from './pages/GoldenDays';
+import Profile from './pages/Profile'; // Import Profile
+import './App.css';
 
-// Page Imports
-import Intro from './components/Intro';
-import Login from './pages/Login';
-import Home from './pages/Home';
-import PrivacyPolicy from './pages/PrivacyPolicy';
-import TermsOfService from './pages/TermsOfService';
-import ContactUs from './pages/ContactUs';
-import Header from './components/Header';
-import Footer from './components/Footer';
+const LanguageSwitcher = () => {
+  const { i18n } = useTranslation();
 
-const lightTheme = createTheme({
-  palette: {
-    mode: 'light',
-    background: {
-      default: '#f7f2f2', // Soft off-white
-      paper: '#ffffff',
-    },
-    primary: {
-        main: '#8c6d62', // Muted brown
-    },
-    text: {
-        primary: '#3a3a3a',
-        secondary: '#6f6f6f',
-    }
-  },
-  typography: {
-    fontFamily: '"Nanum Myeongjo", serif',
-  },
-});
-
-const darkTheme = createTheme({
-  palette: {
-    mode: 'dark',
-    background: {
-      default: '#1f1f1f', // Deep charcoal
-      paper: '#2e2e2e',
-    },
-    primary: {
-      main: '#c5a79d', // Lighter, elegant brown
-    },
-    text: {
-        primary: '#f5f5f5',
-        secondary: '#b0b0b0',
-    }
-  },
-  typography: {
-    fontFamily: '"Nanum Myeongjo", serif',
-  },
-});
-
-function AppContent() {
-  const { theme } = useContext(ThemeContext);
-  const activeTheme = theme === 'light' ? lightTheme : darkTheme;
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+  };
 
   return (
-    <MuiThemeProvider theme={activeTheme}>
-      <CssBaseline />
-      <Router>
-        <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }} className={`theme-${theme}`}>
-            <Header />
-            <Box component="main" sx={{ flexGrow: 1, py: 4, px: { xs: 2, md: 4 } }}>
-                <Routes>
-                    <Route path="/" element={<Intro />} />
-                    <Route path="/login" element={<Login />} />
-                    <Route path="/home" element={<Home />} />
-                    <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-                    <Route path="/terms-of-service" element={<TermsOfService />} />
-                    <Route path="/contact" element={<ContactUs />} />
-                </Routes>
-            </Box>
-            <Footer />
-        </Box>
-      </Router>
-    </MuiThemeProvider>
+    <div className="language-switcher">
+      <button onClick={() => changeLanguage('en')}>English</button>
+      <button onClick={() => changeLanguage('ko')}>한국어</button>
+    </div>
   );
-}
+};
+
 
 function App() {
+  // Check if the user has completed onboarding
+  const hasCompletedOnboarding = !!localStorage.getItem('userProfile');
+
   return (
-    <ThemeProvider>
-      <AppContent />
-    </ThemeProvider>
+    <Router>
+      <LanguageSwitcher />
+      <Routes>
+        <Route path="/" element={hasCompletedOnboarding ? <Navigate to="/dashboard" /> : <Navigate to="/onboarding" />} />
+        <Route path="/onboarding" element={<Onboarding />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/golden-days" element={<GoldenDays />} />
+        <Route path="/profile" element={<Profile />} /> {/* Add Profile route */}
+      </Routes>
+    </Router>
   );
 }
 
 export default App;
+
