@@ -4,72 +4,44 @@ import { Container, Typography, Box, Paper } from '@mui/material';
 
 const PrivacyPolicy = () => {
   return (
-    <Container maxWidth="lg">
-      <Paper sx={{ p: { xs: 2, md: 4 }, mt: 4, backgroundColor: 'rgba(255, 255, 255, 0.05)' }}>
-        <Typography variant="h4" component="h1" gutterBottom sx={{ fontWeight: 'bold' }}>
+    <Container maxWidth="md">
+      <Paper sx={{ p: { xs: 2, md: 4 }, mt: 4 }}>
+        <Typography variant="h4" component="h1" gutterBottom>
           Privacy Policy
         </Typography>
-        <Typography variant="body2" color="text.secondary" sx={{ mb: 3 }}>
-          Last Updated: {new Date().toLocaleDateString()}
+        <Typography variant="body1" paragraph>
+          Your privacy is important to us. It is Gyeol's policy to respect your privacy regarding any information we may collect from you across our website.
         </Typography>
-
-        <Box sx={{ my: 2 }}>
-          <Typography variant="h6" gutterBottom>1. Introduction</Typography>
-          <Typography variant="body1" paragraph>
-            Welcome to Gyeol (결). We are committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our application. Please read this policy carefully. If you do not agree with the terms of this privacy policy, please do not access the application.
-          </Typography>
-        </Box>
-
-        <Box sx={{ my: 2 }}>
-          <Typography variant="h6" gutterBottom>2. Information We Collect</Typography>
-          <Typography variant="body1" paragraph>
-            We may collect information about you in a variety of ways. The information we may collect via the Application includes:
-          </Typography>
-          <ul>
-            <li>
-              <Typography variant="body1"><b>Personal Data:</b> Personally identifiable information, such as your name, email address, and demographic information (like your date and time of birth for Saju calculations), that you voluntarily give to us when you register with the Application.</Typography>
-            </li>
-            <li>
-              <Typography variant="body1"><b>Usage Data:</b> Information our servers automatically collect when you access the Application, such as your IP address, browser type, operating system, and the pages you have viewed.</Typography>
-            </li>
-          </ul>
-        </Box>
-
-        <Box sx={{ my: 2 }}>
-          <Typography variant="h6" gutterBottom>3. Use of Your Information</Typography>
-          <Typography variant="body1" paragraph>
-            Having accurate information about you permits us to provide you with a smooth, efficient, and customized experience. Specifically, we may use information collected about you via the Application to:
-          </Typography>
-          <ul>
-            <li><Typography variant="body1">Create and manage your account.</Typography></li>
-            <li><Typography variant="body1">Generate your personal Gyeol Aura and Saju-based insights.</Typography></li>
-            <li><Typography variant="body1">Display your profile and Gyeol-Sync score to other users you connect with.</Typography></li>
-            <li><Typography variant="body1">Monitor and analyze usage and trends to improve your experience.</Typography></li>
-            <li><Typography variant="body1">Notify you of updates to the Application.</Typography></li>
-          </ul>
-        </Box>
-
-        <Box sx={{ my: 2 }}>
-          <Typography variant="h6" gutterBottom>4. Third-Party Services & Advertising</Typography>
-          <Typography variant="body1" paragraph>
-            We may use third-party advertising companies, such as Google AdSense, to serve ads when you use the Application. These companies may use information about your visits to our Application and other websites that are contained in web cookies in order to provide advertisements about goods and services of interest to you. We will place a file known as ads.txt on our site to identify our authorized ad sellers.
-          </Typography>
-        </Box>
-
-         <Box sx={{ my: 2 }}>
-          <Typography variant="h6" gutterBottom>5. Security of Your Information</Typography>
-          <Typography variant="body1" paragraph>
-            We use administrative, technical, and physical security measures to help protect your personal information. While we have taken reasonable steps to secure the personal information you provide to us, please be aware that despite our efforts, no security measures are perfect or impenetrable, and no method of data transmission can be guaranteed against any interception or other type of misuse.
-          </Typography>
-        </Box>
-
-        <Box sx={{ my: 2 }}>
-          <Typography variant="h6" gutterBottom>6. Contact Us</Typography>
-          <Typography variant="body1" paragraph>
-            If you have questions or comments about this Privacy Policy, please contact us through the form on our <a href="/contact">Contact page</a>.
-          </Typography>
-        </Box>
-
+        <Typography variant="h6" component="h2" sx={{ mt: 3 }}>
+          1. Information We Collect
+        </Typography>
+        <Typography variant="body1" paragraph>
+          We only ask for personal information when we truly need it to provide a service to you. We collect it by fair and lawful means, with your knowledge and consent. The primary piece of personal information we collect is your birth date and time, which is essential for our core service of providing astrological and energy analysis. We do not store this information permanently on our servers; it is processed in real-time to generate your forecast.
+        </Typography>
+        <Typography variant="h6" component="h2" sx={{ mt: 3 }}>
+          2. How We Use Your Information
+        </Typography>
+        <Typography variant="body1" paragraph>
+          We use the information we collect in order to generate personalized content, such as your daily 'Cosmic Forecast' and 'Life Energy Map'. We do not use this information for any other purpose.
+        </Typography>
+        <Typography variant="h6" component="h2" sx={{ mt: 3 }}>
+          3. Security
+        </Typography>
+        <Typography variant="body1" paragraph>
+          We are committed to protecting the data you provide. While no method of transmission over the Internet is 100% secure, we take reasonable precautions to protect your information from loss, misuse, and unauthorized access.
+        </Typography>
+         <Typography variant="h6" component="h2" sx={{ mt: 3 }}>
+          4. Third-Party Services & Advertising
+        </Typography>
+        <Typography variant="body1" paragraph>
+          We may use third-party services, such as Google AdSense, to display advertisements. These services may use cookies to collect information about your visits to this and other websites in order to provide relevant advertisements about goods and services of interest to you.
+        </Typography>
+        <Typography variant="h6" component="h2" sx={{ mt: 3 }}>
+          Contact Us
+        </Typography>
+        <Typography variant="body1" paragraph>
+          If you have any questions about our Privacy Policy, please feel free to contact us.
+        </Typography>
       </Paper>
     </Container>
   );

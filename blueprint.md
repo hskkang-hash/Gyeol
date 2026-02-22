@@ -1,72 +1,75 @@
-# Gyeol App Blueprint
+# Gyeol: Global Energy Analysis Platform - Blueprint
 
-## 1. Project Overview
+## 1. Vision & Strategy
 
-**Purpose:** A web application that provides daily Saju (Korean fortune-telling) analysis, recommendations, and matching services based on a user's birth date.
+**Core Vision:** To become the global leader in the "Energy Analysis" market, surpassing traditional fortune-telling apps like '점신' by offering a superior, data-driven, and visually stunning user experience.
 
-**Target Audience:** Users interested in Korean culture, self-reflection, and fortune-telling.
+**Strategic Pillars:**
+1.  **AdSense Pre-pass (Content & Authority):** Build a content-rich, authoritative platform that Google trusts, ensuring rapid AdSense approval.
+2.  **Unbeatable UX (Personalization & Visualization):** Shift from text-heavy reports to intuitive, beautiful data visualizations.
+3.  **Global Monetization (Hybrid Model):** Rebrand for a global audience ("Saju" -> "Energy Analysis") and implement a hybrid Ad-Gated and Subscription model.
 
-**Key Features:**
-- Daily personalized Saju-based summary and aura.
-- Recommended activities.
-- "Gyeol-Sync" social feed.
-- "Gyeol Matching" to find compatible users.
-- Premium services for deeper insights.
-- Multi-language support (Korean, English).
-- Light/Dark theme modes.
+---
 
-## 2. Design & UI/UX Principles (Global Best Practice)
+## 2. Phase 1: Onboarding & SEO (High Priority)
 
-- **Aesthetics:** Modern, clean, and visually balanced. Use of high-quality typography, iconography, and a refined color palette. Incorporate subtle animations and a "stitch" design motif for a unique, premium feel.
-- **Intuitiveness:** Simple navigation and clear information hierarchy. User actions should be predictable and feedback immediate.
-- **Accessibility:** Adherence to a11y standards, ensuring the app is usable for everyone.
-- **Responsiveness:** Mobile-first design that adapts flawlessly to all screen sizes.
-- **AdSense Ready:** Content-first approach with clear, valuable information. No intrusive elements.
+### 2.1. [UI-01] Immersive & Step-by-Step Onboarding
+*   **Objective:** Create a beautiful, interactive, and user-friendly entry point that builds trust and excitement.
+*   **Component:** `src/pages/Login.jsx` (will be refactored into a multi-step component).
+*   **Design Concept:** "Cosmic Theme" - Deep Blue & Gold palette.
+*   **Key Features:**
+    *   **[ ] Step-by-Step Form:**
+        1.  Step 1: Gender & Name.
+        2.  Step 2: Birth Date (YYYY/MM/DD).
+        3.  Step 3: Birth Time (HH:MM).
+        4.  A progress bar will be displayed at the top.
+    *   **[ ] Interactive Background:** Implement a real-time animated constellation/starry background.
+    *   **[ ] Live Input Feedback:** As the user types their birth date, instantly display the corresponding day of the week and their Western zodiac sign (e.g., "You were born on a Tuesday, a vibrant Leo").
+    *   **[ ] Dynamic Explanations ([FE-01]):** When a user focuses on an input field (e.g., Year), a section below will display text explaining the astrological significance of that data point.
 
-## 3. Current Task: Major UI/UX Overhaul & Feature Implementation
+### 2.2. [FE-02] SEO & Content Authority
+*   **Objective:** Establish E-E-A-T (Experience, Expertise, Authoritativeness, Trustworthiness) to satisfy search engines and prepare for AdSense.
+*   **Components:** `Footer.jsx`, and new policy pages.
+*   **Key Features:**
+    *   **[ ] Glossary Footer:** Add a permanent footer section defining key terms like "Saju (사주)", "Manse-ryeok (만세력)", "Ascendant", etc., rebranding them for a global audience (e.g., "Life Energy Map").
+    *   **[ ] Essential Pages:** Create and link the following pages:
+        - `src/pages/PrivacyPolicy.jsx`
+        - `src/pages/TermsOfService.jsx`
+        - `src/pages/ContactUs.jsx`
+    *   **[ ] Dynamic Meta Tags:** Implement `react-helmet-async` to dynamically change the page title (e.g., `<title>What's My Cosmic Forecast Today?</title>`) based on user context.
 
-### 3.1. New User Entry Flow (Login Page)
+---
 
-**Objective:** Create a beautiful and intuitive entry point for users to input their birth date.
+## 3. Phase 2: Result Visualization (Medium Priority)
 
-- **Component:** `src/pages/Login.jsx`
-- **Path:** `/`
-- **Elements:**
-    - **Logo:** A new "Gyeol" logo with a "stitch" design will be prominently displayed. (`src/components/Logo.jsx`)
-    - **Input Fields:**
-        - Three separate, clearly labeled input fields for Year (YYYY), Month (MM), and Day (DD).
-        - Placeholders will show the current date in a faded, blurred style as an example (e.g., 2024 / 07 / 31).
-    - **Action Button:** A button labeled "See My Gyeol" or similar to navigate the user to the main dashboard.
-- **Navigation:** Upon successful input/button click, the user will be navigated to the `/home` route.
+### 3.1. [UI-02] The Fortune Dashboard
+*   **Objective:** Transform the results page from static text into an engaging, personalized dashboard.
+*   **Component:** `src/pages/Home.jsx`
+*   **Key Features:**
+    *   **[ ] Data-Viz Library:** Integrate `Recharts` for creating charts.
+    *   **[ ] Energy Gauge:** Display "Today's Cosmic Energy Index" as a 0-100% gauge chart.
+    *   **[ ] Luck Radar Chart:** Visualize Love, Wealth, Health, and Career luck on a pentagonal radar chart.
+    *   **[ ] Lucky Elements Cards:** Present today's lucky color, number, and direction as visually appealing icon-based cards.
+    *   **[ ] Loading Animation:** Use `Lottie` to show a beautiful "celestial observation" animation while data is being calculated to prevent user drop-off.
 
-### 3.2. Main Dashboard (Home Page)
+---
 
-**Objective:** Refactor the existing UI into a dedicated, well-structured home page.
+## 4. Phase 3: Global Monetization & Localization (Medium Priority)
 
-- **Component:** `src/pages/Home.jsx`
-- **Path:** `/home`
-- **Content:** All existing dashboard elements (Today's Summary, Aura, Recommendations, etc.) will be moved here.
-- **Layout:** A responsive grid layout will be used to organize the content cards effectively.
+### 4.1. [BIZ-01, BIZ-02] Hybrid Business Model
+*   **Objective:** Implement diverse revenue streams for a global audience.
+*   **Key Features:**
+    *   **[ ] Ad-Gated Content:** Gate detailed analysis (e.g., "Key dates to watch out for this month") behind a "Watch Ad to Unlock" button (rewarded ad model).
+    *   **[ ] AI Fortune Counselor:**
+        - Integrate the OpenAI API.
+        - Create a chat interface where users can ask questions about their "Energy Analysis" (e.g., "How should I approach my meeting today?").
+        - This will be a subscription-based feature.
 
-### 3.3. App Structure & Routing
-
-**Objective:** Implement a robust routing and state management structure.
-
-- **File:** `src/App.jsx`
-- **Routing:**
-    - Use `react-router-dom` to manage navigation.
-    - `Route "/"` -> `Login` component.
-    - `Route "/home"` -> `Home` component.
-- **State Management:**
-    - **Theme (Light/Dark):** A new `ThemeContext` will be created to manage the theme state (`light` or `dark`) across the entire application. This will be independent of the i18n language state.
-    - **Language:** `i18next` will continue to manage language state.
-
-### 3.4. UI Component & Style Fixes
-
-**Objective:** Resolve UI conflicts and elevate the visual design.
-
-- **Header/Nav:** Create a persistent header component.
-- **Toggles:** The theme (dark/light mode) toggle and the language switcher will be placed in the header, ensuring they do not overlap or conflict visually or functionally.
-- **Logo Redesign:** A new component `src/components/Logo.jsx` will be created to render the "결" text with a stylish stitch effect using CSS.
-- **Global Styles:** Refine the MUI theme (colors, typography, spacing) in `src/theme.js` to align with the new premium design direction.
+### 4.2. [i18n] Advanced Localization
+*   **Objective:** Make the app feel native to users anywhere in the world.
+*   **Key Features:**
+    *   **[ ] Terminology Translation:** Update `i18n.js` to translate core concepts:
+        - '사주' -> 'Life Energy Map'
+        - '운세' -> 'Cosmic Forecast'
+    *   **[ ] Auto Language Detection:** Implement logic to detect the user's browser/system language (`navigator.language`) and set the initial language automatically.
 
