@@ -1,6 +1,7 @@
 name = "gyeols"
 compatibility_date = "2024-03-20"
 pages_build_output_dir = "dist"
+account_id = "aRw8H-ENasRkfChmCXj_hi9Ql0JvOR3Gi-dQRXQh"
 
 [build]
 command = "npm run build"
