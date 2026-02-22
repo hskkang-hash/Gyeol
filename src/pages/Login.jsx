@@ -3,7 +3,6 @@ import React, { useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Box, TextField, Button, Typography, Container, Paper, Stepper, Step, StepLabel, LinearProgress, FormControl, InputLabel, Select, MenuItem, Grid } from '@mui/material';
 import Logo from '../components/Logo';
-import { Helmet } from 'react-helmet-async';
 
 const steps = ['Identity', 'Birth Date', 'Birth Time'];
 
@@ -63,7 +62,7 @@ function Login() {
             }
         }
         return null;
-    }, [formData.year, formData.month, formData.day]);
+    }, [formData]);
 
     const getStepContent = (step) => {
         switch (step) {
@@ -112,10 +111,8 @@ function Login() {
 
     return (
         <Container component="main" maxWidth="sm" sx={{ my: 4 }}>
-             <Helmet>
-                <title>Onboarding - Gyeol</title>
-                <meta name="description" content="Enter your birth details to begin your journey of self-discovery and unlock your cosmic forecast." />
-            </Helmet>
+             <title>Onboarding - Gyeol</title>
+             <meta name="description" content="Enter your birth details to begin your journey of self-discovery and unlock your cosmic forecast." />
             <Paper 
                 elevation={4} 
                 sx={{

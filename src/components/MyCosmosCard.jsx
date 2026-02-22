@@ -101,7 +101,7 @@ function MyCosmosCard() {
                         </Grid>
                     </Grid>
                     <Box sx={{ mt: 3, position: 'relative' }}>
-                        <Button type="submit" variant="contained" fullWidth disabled={loading}>_        
+                        <Button type="submit" variant="contained" fullWidth disabled={loading}>       
                             {loading ? 'Calculating...' : 'Reveal My Blueprint'}
                         </Button>
                         {loading && (

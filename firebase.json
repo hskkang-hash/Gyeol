@@ -1,0 +1,19 @@
+{
+  "functions": {
+    "source": "functions"
+  },
+  "emulators": {
+    "functions": {
+      "port": 5003
+    },
+    "hub": {
+      "port": 4405
+    },
+    "ui": {
+      "port": 4005
+    },
+    "logging": {
+      "port": 4505
+    }
+  }
+}

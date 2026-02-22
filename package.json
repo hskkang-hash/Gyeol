@@ -4,7 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "concurrently \"npm:dev:frontend\" \"npm:dev:backend\"",
+    "dev:frontend": "vite",
+    "dev:backend": "firebase emulators:start --only functions --project demo-gyeol",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
@@ -18,10 +20,10 @@
     "chart.js": "^4.5.1",
     "firebase": "^12.9.0",
     "i18next": "^25.8.13",
+    "i18next-browser-languagedetector": "^8.2.1",
     "react": "^19.2.0",
     "react-chartjs-2": "^5.3.1",
     "react-dom": "^19.2.0",
-    "react-helmet-async": "^2.0.5",
     "react-i18next": "^16.5.4",
     "react-router-dom": "^7.13.0"
   },
@@ -30,6 +32,7 @@
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^5.1.1",
+    "concurrently": "^8.2.2",
     "eslint": "^9.39.1",
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.4.24",

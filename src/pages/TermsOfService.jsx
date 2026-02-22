@@ -45,7 +45,7 @@ const TermsOfService = () => {
         </Typography>
         <Typography variant="body1" paragraph>
           These terms and conditions are governed by and construed in accordance with the laws of the Republic of Korea and you irrevocably submit to the exclusive jurisdiction of the courts in that State or location.
-        </y>
+        </Typography>
       </Paper>
     </Container>
   );

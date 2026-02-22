@@ -4,10 +4,10 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ThemeProvider as MuiThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import { Box } from '@mui/material';
-import { HelmetProvider } from 'react-helmet-async';
 import { ThemeContext, ThemeProvider } from './contexts/themeContext';
 
 // Page Imports
+import Intro from './components/Intro';
 import Login from './pages/Login';
 import Home from './pages/Home';
 import PrivacyPolicy from './pages/PrivacyPolicy';
@@ -68,7 +68,8 @@ function AppContent() {
             <Header /> 
             <Box component="main" sx={{ flexGrow: 1, py: 4, px: { xs: 2, md: 4 } }}>
                 <Routes>
-                    <Route path="/" element={<Login />} />
+                    <Route path="/" element={<Intro />} />
+                    <Route path="/login" element={<Login />} />
                     <Route path="/home" element={<Home />} />
                     <Route path="/privacy-policy" element={<PrivacyPolicy />} />
                     <Route path="/terms-of-service" element={<TermsOfService />} />
@@ -84,11 +85,9 @@ function AppContent() {
 
 function App() {
   return (
-    <HelmetProvider>
-      <ThemeProvider>
-        <AppContent />
-      </ThemeProvider>
-    </HelmetProvider>
+    <ThemeProvider>
+      <AppContent />
+    </ThemeProvider>
   );
 }
 
