@@ -6,9 +6,24 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 const resources = {
   en: {
     translation: {
-      // Existing translations ...
+      // Onboarding & General
       "Welcome to Gyeol": "Welcome to Gyeol",
       "Discover your daily flow and connect with the world.": "Discover your daily flow and connect with the world.",
+      
+      // Home Page
+      "home.tagline": "Your daily cosmic forecast, tailored to your unique energy.",
+      "home.todaysGyeol": "Today's Gyeol",
+      "home.myCosmos": "My Cosmos",
+      "home.relationshipGyeol": "Relationship Gyeol",
+      
+      // Today's Gyeol Card
+      "today.element": "Today's Element",
+      "today.color": "Auspicious Color",
+      "today.number": "Lucky Number",
+      "today.direction": "Favorable Direction",
+      "elements.wood": "Wood",
+      "colors.blue": "Blue",
+      "directions.east": "East",
 
       // Glossary Terms
       "glossary.title": "Glossary of Terms",
@@ -31,9 +46,24 @@ const resources = {
   },
   ko: {
     translation: {
-        // Existing translations ...
+        // Onboarding & General
         "Welcome to Gyeol": "결에 오신 것을 환영합니다",
         "Discover your daily flow and connect with the world.": "당신의 일상적인 흐름을 발견하고 세상과 소통하세요.",
+        
+        // Home Page
+        "home.tagline": "당신의 고유한 에너지에 맞춰진 오늘의 우주적 예보.",
+        "home.todaysGyeol": "오늘의 결",
+        "home.myCosmos": "나의 천체",
+        "home.relationshipGyeol": "관계의 결",
+
+        // Today's Gyeol Card
+        "today.element": "오늘의 오행",
+        "today.color": "길한 색상",
+        "today.number": "행운의 숫자",
+        "today.direction": "유리한 방향",
+        "elements.wood": "목(木)",
+        "colors.blue": "파란색",
+        "directions.east": "동쪽",
         
         // Glossary Terms
         "glossary.title": "주요 용어 안내",
@@ -62,6 +92,7 @@ i18n
   .init({
     resources,
     fallbackLng: 'en', // use en if detected lng is not available
+    debug: true, // Keep it true during development to see logs
     interpolation: {
       escapeValue: false // react already safes from xss
     },
