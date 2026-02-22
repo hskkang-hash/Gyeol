@@ -1,63 +1,72 @@
+# Gyeol App Blueprint
 
-# Project Blueprint
+## 1. Project Overview
 
-## Overview
+**Purpose:** A web application that provides daily Saju (Korean fortune-telling) analysis, recommendations, and matching services based on a user's birth date.
 
-This document outlines the plan for redesigning the "Gyeol" application. The goal is to create a visually appealing, mobile-first application with a responsive design, a new intro screen, and a theme switcher.
+**Target Audience:** Users interested in Korean culture, self-reflection, and fortune-telling.
 
-## Current State
+**Key Features:**
+- Daily personalized Saju-based summary and aura.
+- Recommended activities.
+- "Gyeol-Sync" social feed.
+- "Gyeol Matching" to find compatible users.
+- Premium services for deeper insights.
+- Multi-language support (Korean, English).
+- Light/Dark theme modes.
 
-The application is a React-based web app with several components for displaying "Gyeol" related information. The styling is basic and not optimized for mobile devices.
+## 2. Design & UI/UX Principles (Global Best Practice)
 
-## Redesign Plan
+- **Aesthetics:** Modern, clean, and visually balanced. Use of high-quality typography, iconography, and a refined color palette. Incorporate subtle animations and a "stitch" design motif for a unique, premium feel.
+- **Intuitiveness:** Simple navigation and clear information hierarchy. User actions should be predictable and feedback immediate.
+- **Accessibility:** Adherence to a11y standards, ensuring the app is usable for everyone.
+- **Responsiveness:** Mobile-first design that adapts flawlessly to all screen sizes.
+- **AdSense Ready:** Content-first approach with clear, valuable information. No intrusive elements.
 
-### 1. Mobile-First and Responsive Design
+## 3. Current Task: Major UI/UX Overhaul & Feature Implementation
 
-- The application will be designed for a 9:16 aspect ratio, targeting mobile devices first.
-- The layout will be responsive to ensure it looks good on larger screens (web).
-- CSS media queries will be used to adapt the styling for different screen sizes.
+### 3.1. New User Entry Flow (Login Page)
 
-### 2. Intro Screen
+**Objective:** Create a beautiful and intuitive entry point for users to input their birth date.
 
-- A new, visually engaging intro screen will be created.
-- The intro screen will be displayed for a few seconds when the application starts.
-- It will feature an animation and a clean design to provide a great first impression.
+- **Component:** `src/pages/Login.jsx`
+- **Path:** `/`
+- **Elements:**
+    - **Logo:** A new "Gyeol" logo with a "stitch" design will be prominently displayed. (`src/components/Logo.jsx`)
+    - **Input Fields:**
+        - Three separate, clearly labeled input fields for Year (YYYY), Month (MM), and Day (DD).
+        - Placeholders will show the current date in a faded, blurred style as an example (e.g., 2024 / 07 / 31).
+    - **Action Button:** A button labeled "See My Gyeol" or similar to navigate the user to the main dashboard.
+- **Navigation:** Upon successful input/button click, the user will be navigated to the `/home` route.
 
-### 3. Theme Switcher (Black/White)
+### 3.2. Main Dashboard (Home Page)
 
-- A theme switcher has been implemented to allow users to choose between a light (white) and dark (black) theme.
-- The theme state is managed globally in the application using React's Context API.
-- A UI control has been added to the header to toggle the theme.
+**Objective:** Refactor the existing UI into a dedicated, well-structured home page.
 
-### 4. Font and Typography
+- **Component:** `src/pages/Home.jsx`
+- **Path:** `/home`
+- **Content:** All existing dashboard elements (Today's Summary, Aura, Recommendations, etc.) will be moved here.
+- **Layout:** A responsive grid layout will be used to organize the content cards effectively.
 
-- The font has been updated to a more modern and suitable one, inspired by the provided design.
-- Google Fonts is used to import the new font.
-- Typography has been improved for better readability and visual hierarchy.
+### 3.3. App Structure & Routing
 
-### 5. UI Overhaul
+**Objective:** Implement a robust routing and state management structure.
 
-- The overall UI has been redesigned to be more modern and aesthetically pleasing.
-- The color palette has been updated to match the new design.
-- Components have been restyled to have a consistent and polished look.
+- **File:** `src/App.jsx`
+- **Routing:**
+    - Use `react-router-dom` to manage navigation.
+    - `Route "/"` -> `Login` component.
+    - `Route "/home"` -> `Home` component.
+- **State Management:**
+    - **Theme (Light/Dark):** A new `ThemeContext` will be created to manage the theme state (`light` or `dark`) across the entire application. This will be independent of the i18n language state.
+    - **Language:** `i18next` will continue to manage language state.
 
-## Action Steps
+### 3.4. UI Component & Style Fixes
 
-1.  **Create `blueprint.md`:** Document the plan.
-2.  **Implement Theme Switcher:**
-    - Create a `ThemeContext` to manage the theme.
-    - Update `App.jsx` to use the `ThemeProvider`.
-    - Add a theme toggle button to the `Header.jsx` component.
-3.  **Responsive Design:**
-    - Update `index.css` to set the base styles and aspect ratio.
-    - Add media queries to component-specific CSS files.
-4.  **Create Intro Screen:**
-    - Create a new `Intro.jsx` component with animations.
-    - Update `App.jsx` to show the intro screen on the first load.
-5.  **Update Fonts:**
-    - Add the new font from Google Fonts to `index.html`.
-    - Update the theme to use the new font.
-6.  **Restyle Components:**
-    - Update the styling of all major components to align with the new design.
-    - Create a new `Intro.jsx` component.
-    - I'll start by restyling `App.jsx` and `index.css`.
+**Objective:** Resolve UI conflicts and elevate the visual design.
+
+- **Header/Nav:** Create a persistent header component.
+- **Toggles:** The theme (dark/light mode) toggle and the language switcher will be placed in the header, ensuring they do not overlap or conflict visually or functionally.
+- **Logo Redesign:** A new component `src/components/Logo.jsx` will be created to render the "결" text with a stylish stitch effect using CSS.
+- **Global Styles:** Refine the MUI theme (colors, typography, spacing) in `src/theme.js` to align with the new premium design direction.
+
